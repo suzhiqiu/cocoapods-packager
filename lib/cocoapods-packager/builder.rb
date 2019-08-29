@@ -317,6 +317,8 @@ MAP
       end
 
       command = "xcodebuild #{defines} #{args}  DEBUG_INFORMATION_FORMAT='dwarf-with-dsym' CONFIGURATION_BUILD_DIR=#{build_dir} clean build -configuration #{config} -target #{target} -project #{project_root}/Pods.xcodeproj 2>&1"
+      UI.puts "命令command::#{command}".red
+      
       output = `#{command}`.lines.to_a
 
       if $?.exitstatus != 0

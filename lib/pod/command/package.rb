@@ -136,7 +136,9 @@ module Pod
         target_dir = create_target_directory
         return if target_dir.nil?
 
-        work_dir = Dir.tmpdir + '/cocoapods-' + Array.new(8) { rand(36).to_s(36) }.join
+        #work_dir = Dir.tmpdir + '/cocoapods-' + Array.new(8) { rand(36).to_s(36) }.join
+        work_dir =  Dir.home
+        work_dir =  work_dir +'/Documents/ucar'
         Pathname.new(work_dir).mkdir
         Dir.chdir(work_dir)
 
